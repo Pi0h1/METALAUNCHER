@@ -1,5 +1,10 @@
-logo_size = 360;
+logo_size = 512;
 directory_main = scr_get_main_directory()
+logo_height = 0;
+logoDistance = 90;
+yearY = (room_height / 2) - 64;
+incidentY = (room_height / 2) + 26 // (- 64 + 80 + 6);
+descriptionY = (room_height / 2) + 80;
 
 #region Functions
 
@@ -214,14 +219,24 @@ setCover = function(item) {
 
 launchGame = function() {
 	if (item_launch = "") {
-		audio_play_sound(snd_launch_failed, false, false)
 		var store_url = game_selection_current[$ "store_url"]
+		
+		// Open store page
 		if !is_undefined(store_url) and string_length(store_url) > 1
+		{
 			url_open(store_url)
+		} else // Content is not available
+			{
+				audio_play_sound(snd_launch_failed, false, false)
+				if instance_exists(objContentUnavailable){
+					objContentUnavailable.activate=1;
+				}
+			}
 	}
 	else {
 		ExecuteShell(item_launch, false)
-		game_end()
+		audio_pause_sound(music_game)
+		//game_end()
 	}
 }
 

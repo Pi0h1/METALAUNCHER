@@ -15,9 +15,11 @@ if (game_selection_current != noone) {
 		
 		if item_logo {
 			var scale = logo_size / sprite_get_width(item_logo);
-			draw_sprite_ext(item_logo,0,xpos,480+48,scale,scale,0,c_white,1);
+			logo_height = (sprite_get_height(item_logo)*scale)-logoDistance;
+			draw_sprite_ext(item_logo,0,xpos,480+48,scale,scale,0,c_white,text_alpha);
 			}
 		else{
+		logo_height = 0;
 		drawLogo(xpos, 480)
 		}
 		
@@ -25,9 +27,11 @@ if (game_selection_current != noone) {
 	else {
 		if item_logo {
 			var scale = logo_size / sprite_get_width(item_logo);
-			draw_sprite_ext(item_logo,0,xpos,345+48,scale,scale,0,c_white,1);
+			logo_height =  (sprite_get_height(item_logo)*scale)-logoDistance;
+			draw_sprite_ext(item_logo,0,xpos,345+48,scale,scale,0,c_white,text_alpha);
 			}
 		else{
+		logo_height = 0;
 		drawLogo(xpos, 345)
 		}
 		// Incident Year
@@ -36,7 +40,7 @@ if (game_selection_current != noone) {
 			draw_set_valign(fa_top)
 			draw_set_halign(fa_left)
 			var text_x = (room_width / 4) - 256
-			var text_y = (room_height / 2) - 64
+			var text_y = logo_height + yearY;
 			draw_text_color(text_x, text_y, item_incident_year_typing, item_title_color, item_title_color, item_title_color, item_title_color, text_alpha)
 		}
 		
@@ -46,7 +50,7 @@ if (game_selection_current != noone) {
 			draw_set_valign(fa_top)
 			draw_set_halign(fa_left)
 			var text_x = (room_width / 4) - 256
-			var text_y = (room_height / 2) - 64 + 80 + 6
+			var text_y = logo_height + incidentY;
 			draw_text_color(text_x, text_y, item_incident_text_typing, item_title_color, item_title_color, item_title_color, item_title_color, text_alpha)
 		}
 		
@@ -56,7 +60,7 @@ if (game_selection_current != noone) {
 			draw_set_valign(fa_top)
 			draw_set_halign(fa_left)
 			var text_x = (room_width / 4) - 256 + 2
-			var text_y = (room_height / 2) + 80
+			var text_y = logo_height + descriptionY;
 			draw_text_color(text_x, text_y, item_description_text_typing, item_description_color, item_description_color, item_description_color, item_description_color, text_alpha)
 		}
 	}
