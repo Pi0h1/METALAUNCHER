@@ -1,0 +1,42 @@
+!!! Font fntHelvetica uses a font (Helvetica Negrita) not installed on this system - Font has NOT been regenerated
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fntHelvetica\fntHelvetica.gms1.png
+!!! Font fntHelveticaCompressed uses a font (Helvetica Ultra Compressed) not installed on this system - Font has NOT been regenerated
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fntHelveticaCompressed\fntHelveticaCompressed.gms1.png
+!!! Font fntHelveticaSubtitle uses a font (Helvetica Negrita) not installed on this system - Font has NOT been regenerated
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fntHelveticaSubtitle\fntHelveticaSubtitle.gms1.png
+!!! Font fntHelveticaDescription uses a font (Helvetica) not installed on this system - Font has NOT been regenerated
+GameMaker Studio 1 font texture has been backed up at ${project_dir}\fonts\fntHelveticaDescription\fntHelveticaDescription.gms1.png
+Converting GML script: ${project_dir}\objects\obj_example\Create_0.gml
+Converted description /// @description  Wait for game window to completely open ...
+
+Converting GML script: ${project_dir}\objects\obj_example\Alarm_0.gml
+Converted description /// @description  Run external files, games, or applications ...
+Converted string - line 18: '"C:\Windows\System32\notepad.exe" "' -> "\"C:\\Windows\\System32\\notepad.exe\" \""
+Converted string - line 18: '\example.txt"' -> "\\example.txt\""
+Converted string - line 21: '"C:\Windows\System32\calc.exe"' -> "\"C:\\Windows\\System32\\calc.exe\""
+Converted string - line 29: 'open "/Applications/TextEdit.app" "' -> "open \"/Applications/TextEdit.app\" \""
+Converted string - line 29: '/example.txt"' -> "/example.txt\""
+Converted string - line 32: '"/Applications/Calculator.app/Contents/MacOS/Calculator"' -> "\"/Applications/Calculator.app/Contents/MacOS/Calculator\""
+Converted string - line 40: '"/usr/bin/gedit" "' -> "\"/usr/bin/gedit\" \""
+Converted string - line 40: '/example.txt"' -> "/example.txt\""
+Converted string - line 43: '"/usr/bin/gnome-calculator"' -> "\"/usr/bin/gnome-calculator\""
+
+Converting GML script: ${project_dir}\objects\objCover\Mouse_56.gml
+Converted string - line 4: '"steam://rungameid/311340' -> "\"steam://rungameid/311340"
+Converted string - line 9: '"steam://rungameid/287700"' -> "\"steam://rungameid/287700\""
+
+Missing audiogroup for sound: 'muJingle' - setting to default audio group
+Missing audiogroup for sound: 'muIdle' - setting to default audio group
+Missing audiogroup for sound: 'muMG' - setting to default audio group
+Missing audiogroup for sound: 'muMG2SS' - setting to default audio group
+Missing audiogroup for sound: 'muMGS1' - setting to default audio group
+Missing audiogroup for sound: 'muMGS2' - setting to default audio group
+Missing audiogroup for sound: 'muMGS3' - setting to default audio group
+Missing audiogroup for sound: 'muMGS4' - setting to default audio group
+Missing audiogroup for sound: 'muMGSPW' - setting to default audio group
+Missing audiogroup for sound: 'muMGSVGZ' - setting to default audio group
+Missing audiogroup for sound: 'muMGSVTPP' - setting to default audio group
+Missing audiogroup for sound: 'sndClick' - setting to default audio group
+Missing audiogroup for sound: 'sndNext' - setting to default audio group
+Missing audiogroup for sound: 'sndCancel' - setting to default audio group
+Game speed set to 60
