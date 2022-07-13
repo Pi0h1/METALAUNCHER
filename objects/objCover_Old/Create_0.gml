@@ -26,6 +26,7 @@ description=""
 currentsong=""
 scrInfo();
 spd=0
+manual = [];
 
 
 setCover = function(cover) {

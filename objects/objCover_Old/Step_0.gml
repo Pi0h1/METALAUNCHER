@@ -17,7 +17,7 @@ if spd<0 spd+=0.5
 
 pressleft = keyboard_check_released(ord("A")) or keyboard_check_released(vk_left)
 pressright = keyboard_check_released(ord("D")) or keyboard_check_released(vk_right)
-
+pressinfo = keyboard_check_released( ord( "I" ) );
 
 if (pressleft) {
 	setCover(cover - 1)
@@ -25,4 +25,9 @@ if (pressleft) {
 }
 if (pressright) {
 	setCover(cover + 1)
+}
+
+if ( pressinfo )
+{
+	
 }

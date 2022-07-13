@@ -68,6 +68,25 @@ getGameInfo = function(directory) {
 			struct.music = audio_create_stream(directory + @"music.ogg")
 		}
 		
+		var manual_dir = directory + @"manual\";
+		if directory_exists( manual_dir )
+		{
+			struct.manual_pages = [];
+			for ( var i = 0; true; i++ )
+			{
+				var fullpath = manual_dir + string( i ) + ".png";
+				if file_exists( fullpath )
+				{
+					var sprite = sprite_add( fullpath, 1, false, false, 0, 0 );
+					//sprite_set_offset( sprite, sprite_get_width( sprite ) / 2, sprite_get_height( sprite ) / 2 )
+					struct.manual_pages[i] = sprite;
+				}
+				else
+				{
+					break;
+				}
+			}
+		}
 		return struct
 	}
 }
@@ -126,6 +145,7 @@ setCover = function(item) {
 	item_logo =-1;
 	game_selection_current = item
 	game_selection_current_id = item.id
+	item_manual = undefined;
 	audio_play_sound(sndNext, 0, false)
 	
 	if is_struct(item) {
@@ -209,6 +229,10 @@ setCover = function(item) {
 			item_launch = directory_games + item.name + @"\game.url"
 		else
 			item_launch = ""
+		
+		_get = item[$ "manual_pages"];
+		if is_array( _get )
+			item_manual = _get;
 	}
 	
 	if !is_undefined(item[$ "cover_sprite"])
@@ -354,6 +378,8 @@ item_release_ymd = [0, 0, 0]
 
 item_steam_gameid = ""
 item_launch = ""
+
+item_manual = [];
 #endregion
 
 #region Sorting Games
@@ -415,3 +441,4 @@ function selectGame(){
 		}
 }
 #endregion
+

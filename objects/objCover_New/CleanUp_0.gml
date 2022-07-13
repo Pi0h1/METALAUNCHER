@@ -14,4 +14,11 @@ for (var i = 0; i < array_length(games_array); i++) {
 	if !is_undefined(item[$ "music"]) and audio_exists(item.music)
 		audio_destroy_stream(item.music)
 	
+	if !is_undefined( item[$ "manual_pages"] )
+	{
+		for ( var i = 0; i < array_length( item.manual_pages ); i++ )
+		{
+			sprite_delete( item.manual_pages[i] );
+		}
+	}
 }
