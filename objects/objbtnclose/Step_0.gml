@@ -1,0 +1,1 @@
+if (window_command_check(window_command_close)) game_end();

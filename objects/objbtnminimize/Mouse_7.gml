@@ -1,1 +1,1 @@
-window_command_run(window_command_minimize);
+winMinimize();
