@@ -5,3 +5,11 @@ if (window_command_check(window_command_restore)) {
         window_command_run(window_command_restore);
     }
 }
+
+if window_get_width()	< 1 
+or window_get_height()	< 1 {
+	draw_enable_drawevent(false);
+} 
+else {
+	draw_enable_drawevent(true);
+}

@@ -1,12 +1,15 @@
+#region Init Variables
 logo_size = 512;
 directory_main = scr_get_main_directory()
 logo_height = 0;
 logoDistance = 90;
 yearY = (room_height / 2) - 64;
-incidentY = (room_height / 2) + 26 // (- 64 + 80 + 6);
+incidentY = (room_height / 2) + 26 // -64+80+6=26;
 descriptionY = (room_height / 2) + 80;
-canOpen=true;
-enableTimer=0;
+canOpen = true;
+enableTimer = 0;
+#endregion
+
 #region Functions
 
 getGameInfo = function(directory) {
@@ -353,7 +356,7 @@ item_steam_gameid = ""
 item_launch = ""
 #endregion
 
-
+#region Sorting Games
 sort_by = sortBy_ReleaseDate
 
 array_sort(games_array, sort_by)
@@ -385,7 +388,9 @@ typing_characters = [
 	@"?",
 ]
 typing_characters_count = array_length(typing_characters)
+#endregion
 
+#region Select Game
 function selectGame(){
 	if (pressconfirm) {
 		if (blur = 0) {
@@ -409,3 +414,4 @@ function selectGame(){
 			}
 		}
 }
+#endregion

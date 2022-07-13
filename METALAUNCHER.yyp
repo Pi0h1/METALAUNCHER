@@ -10,6 +10,7 @@
     {"id":{"name":"coverMGS1","path":"sprites/coverMGS1/coverMGS1.yy",},"order":5,},
     {"id":{"name":"coverMGS2","path":"sprites/coverMGS2/coverMGS2.yy",},"order":7,},
     {"id":{"name":"objBtnClose","path":"objects/objBtnClose/objBtnClose.yy",},"order":13,},
+    {"id":{"name":"scrFindPages","path":"scripts/scrFindPages/scrFindPages.yy",},"order":19,},
     {"id":{"name":"objBtnMaximize","path":"objects/objBtnMaximize/objBtnMaximize.yy",},"order":14,},
     {"id":{"name":"objCover","path":"objects/objCover/objCover.yy",},"order":0,},
     {"id":{"name":"coverMGS3","path":"sprites/coverMGS3/coverMGS3.yy",},"order":9,},
