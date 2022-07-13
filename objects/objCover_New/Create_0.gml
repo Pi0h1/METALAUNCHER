@@ -5,7 +5,8 @@ logoDistance = 90;
 yearY = (room_height / 2) - 64;
 incidentY = (room_height / 2) + 26 // (- 64 + 80 + 6);
 descriptionY = (room_height / 2) + 80;
-
+canOpen=true;
+enableTimer=0;
 #region Functions
 
 getGameInfo = function(directory) {
@@ -213,7 +214,7 @@ setCover = function(item) {
 	if !is_undefined(item[$ "item_logo"])
 		item_logo = item[$ "item_logo"]
 	
-	window_set_caption(string(item_title_text) + ((item_title_number_text != "") ? (" " + string(item_title_number_text)) : "") + ": " + string(item_subtitle_text))
+	//window_set_caption(+string(item_title_text) + ((item_title_number_text != "") ? (" " + string(item_title_number_text)) : "") + ": " + string(item_subtitle_text))
 	//window_set_caption(string_upper(item_name))
 }
 
@@ -234,8 +235,12 @@ launchGame = function() {
 			}
 	}
 	else {
-		ExecuteShell(item_launch, false)
-		audio_pause_sound(music_game)
+		if canOpen {
+			ExecuteShell(item_launch, false);
+			audio_pause_sound(music_game);
+			canOpen = false;
+			enableTimer=60;
+		}
 		//game_end()
 	}
 }
@@ -380,3 +385,27 @@ typing_characters = [
 	@"?",
 ]
 typing_characters_count = array_length(typing_characters)
+
+function selectGame(){
+	if (pressconfirm) {
+		if (blur = 0) {
+			launchGame()
+		}
+		else {
+			audio_play_sound(sndClick, 0, false)
+			blur = 0
+			bg_alpha = 1
+			text_alpha = 0
+			item_incident_year_typing_n = 1
+			item_incident_text_typing_n = 1
+			item_description_text_typing_n = 1
+			if (game_selection_current != noone) and !is_undefined(game_selection_current[$ "music"]) and audio_exists(game_selection_current[$ "music"])
+				{
+				//audio_pause_sound(music_idle)
+				audio_sound_gain(music_idle, 0, 1000 * 0.75)
+				audio_stop_sound(music_game)
+				music_game = audio_play_sound(game_selection_current[$ "music"], 0, true)
+				}
+			}
+		}
+}

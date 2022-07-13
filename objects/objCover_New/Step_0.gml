@@ -1,3 +1,10 @@
+if enableTimer > 0 enableTimer-=1;
+if enableTimer < 0 enableTimer=0;
+
+if enableTimer=0{
+canOpen=true;
+}
+
 if (text_alpha < 1)
 	text_alpha = min(text_alpha + 0.1, 1)
 
@@ -42,26 +49,19 @@ if (pressright) {
 	setCover(games_array[cover_array_id])
 }
 
-if (pressconfirm) {
-	if (blur = 0) {
-		launchGame()
-	}
-	else {
-		audio_play_sound(sndClick, 0, false)
-		blur = 0
-		bg_alpha = 1
-		text_alpha = 0
-		item_incident_year_typing_n = 1
-		item_incident_text_typing_n = 1
-		item_description_text_typing_n = 1
-		if (game_selection_current != noone) and !is_undefined(game_selection_current[$ "music"]) and audio_exists(game_selection_current[$ "music"]) {
-			//audio_pause_sound(music_idle)
-			audio_sound_gain(music_idle, 0, 1000 * 0.75)
-			audio_stop_sound(music_game)
-			music_game = audio_play_sound(game_selection_current[$ "music"], 0, true)
+if instance_exists(objCursor)
+{
+with objCursor {
+	if !place_meeting(x,y,objButton) 
+		{
+			with objCover_New {selectGame();}
 		}
 	}
-}
+} else 
+	{
+		with objCover_New {selectGame();}
+	}
+
 
 if (pressback) {
 	if (blur = 0) {
