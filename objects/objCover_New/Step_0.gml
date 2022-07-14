@@ -27,26 +27,49 @@ else {
 
 pressleft = keyboard_check_released(ord("A")) or keyboard_check_released(vk_left)
 pressright = keyboard_check_released(ord("D")) or keyboard_check_released(vk_right)
-
 pressconfirm = keyboard_check_released(vk_enter) or keyboard_check_released(vk_space) or mouse_check_button_released(mb_left)
 pressback = mouse_check_button_released(mb_right) or keyboard_check_released(vk_escape)
-
 presssort = keyboard_check_released(ord("Q"))
+pressinfo = keyboard_check_released(ord("I"))
+
+
+if blur=0{
+	if pressinfo {
+	showManual=!showManual;
+	}
+} else {
+	ResetManual();
+}
 
 if (pressleft) {
+	if blur=1{
 	//Left
 	cover_array_id --
 	if (cover_array_id < 0)
 		cover_array_id += game_count
 	setCover(games_array[cover_array_id])
+	}
+	
+	if showManual {
+		if item_manual!=undefined{
+			if manualPage > 0 manualPage--;
+		}
+	}
 }
 
 if (pressright) {
+	if blur=1{
 	//Right
 	cover_array_id ++
 	if (cover_array_id >= game_count)
 		cover_array_id -= game_count
 	setCover(games_array[cover_array_id])
+	}
+	if showManual {
+		if item_manual!=undefined{
+			if manualPage < (array_length(item_manual) - 1) manualPage++;
+		}
+	}
 }
 
 if instance_exists(objCursor)

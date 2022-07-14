@@ -8,9 +8,21 @@ incidentY = (room_height / 2) + 26 // -64+80+6=26;
 descriptionY = (room_height / 2) + 80;
 canOpen = true;
 enableTimer = 0;
+showManual = 0;
+manualPage = 0;
+manualZoom = 0;
+zoomValue = 0.25
 #endregion
 
 #region Functions
+
+function ResetManual(){
+	showManual = 0;
+	pressinfo  = 0;
+	manualPage = 0;
+	manualZoom = 0;
+}
+
 
 getGameInfo = function(directory) {
 	var file = file_text_open_read(directory + @"game.txt")
@@ -78,8 +90,9 @@ getGameInfo = function(directory) {
 				if file_exists( fullpath )
 				{
 					var sprite = sprite_add( fullpath, 1, false, false, 0, 0 );
-					//sprite_set_offset( sprite, sprite_get_width( sprite ) / 2, sprite_get_height( sprite ) / 2 )
+					sprite_set_offset( sprite, sprite_get_width( sprite ) / 2, sprite_get_height( sprite ) / 2 )
 					struct.manual_pages[i] = sprite;
+					//sprite_set_offset(struct.manual_pages, floor(sprite_get_width(struct.manual_pages) / 2), floor(sprite_get_height(struct.manual_pages) / 2))
 				}
 				else
 				{
